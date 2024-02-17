@@ -14,15 +14,14 @@ def main():
             print(f"Change Owed: {amount * -1}")
 
 
-main()
-
 
 # Implement a program that prompts the user for the name of a variable in camel case and outputs the corresponding name in snake case.
 # Assume that the user’s input will indeed be in camel case.
 
-user = input("camelCase: ")
 
+user = input("camelCase: ")
 print("snake_case: ", end="")
+
 
 for word in user:
     if word.isupper():
@@ -35,11 +34,14 @@ for word in user:
 # outputs that same text but with all vowels (A, E, I, O, and U) omitted, whether inputted in uppercase or lowercase
 
 
-user = input("Input: ").lower()
-
+user = input("Input: ")
 print("Output: ", end="")
 
+
 for words in user:
-    if words in ["a", "e", "i", "o", "u"]:
+    if words.lower() in ["a", "e", "i", "o", "u"]:
         words = ""
     print(words, end="")
+        words = ""
+    print(words, end="")
+
