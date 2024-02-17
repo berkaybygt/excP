@@ -1,0 +1,46 @@
+import tkinter as tk
+
+
+def hesapla():
+    try:
+        s1 = float(entry1.get())
+        s2 = float(entry2.get())
+        s3 = float(entry3.get())
+
+        sonuc = (s1 - s2) / s3
+        hesapla = (sonuc * 10) + 50
+
+        label_sonuc["text"] = str(hesapla)
+    except ValueError:
+        label_sonuc["text"] = "Geçersiz giriş!"
+
+
+root = tk.Tk()
+root.title("Hesap Makinesi")
+
+# Text 
+label1 = tk.Label(root, text="Ders notu:")
+label1.grid(row=0, column=0)
+entry1 = tk.Entry(root)
+entry1.grid(row=0, column=1)
+
+label2 = tk.Label(root, text="SinifOrt:")
+label2.grid(row=1, column=0)
+entry2 = tk.Entry(root)
+entry2.grid(row=1, column=1)
+
+label3 = tk.Label(root, text="StandartSpt:")
+label3.grid(row=2, column=0)
+entry3 = tk.Entry(root)
+entry3.grid(row=2, column=1)
+
+# Hesapla Butonu
+button_hesapla = tk.Button(root, text="Hesapla", command=hesapla)
+button_hesapla.grid(row=3, column=0, columnspan=2)
+
+
+label_sonuc = tk.Label(root, text="")
+label_sonuc.grid(row=4, column=0, columnspan=2)
+
+# Uygulamayı başlat
+root.mainloop()
